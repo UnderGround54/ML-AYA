@@ -12,9 +12,6 @@ class Article
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    private ?int $id = null;
-
-    #[ORM\Column]
     private ?int $article_id = null;
 
     #[ORM\Column(length: 255, nullable: true)]
@@ -26,21 +23,9 @@ class Article
     #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
     private ?\DateTimeInterface $article_datemodif = null;
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
-
     public function getArticleId(): ?int
     {
         return $this->article_id;
-    }
-
-    public function setArticleId(int $article_id): static
-    {
-        $this->article_id = $article_id;
-
-        return $this;
     }
 
     public function getArticleDescription(): ?string
